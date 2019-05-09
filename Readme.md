@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Дмитрий](https://up.htmlacademy.ru/htmlcss/25/user/968793).
-* Наставник: [Дмитрий Щипунов] (https://up.htmlacademy.ru/htmlcss/25/user/1041563).
+* Наставник: [Дмитрий Щипунов](https://up.htmlacademy.ru/htmlcss/25/user/1041563).
 
 ---
 
