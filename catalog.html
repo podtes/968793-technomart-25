@@ -8,13 +8,15 @@
     <header class="main-header">
       <div class="main-header-menu">
         <a class="main-header-logo" href="index.html">
-          <img src="img/logo-index.svg" alt="Техномарт" width="110" height="18">
+          <img src="img/logo-index.svg" alt="Логотип магазина Техномарт" width="110" height="18">
         </a>
-        <!--   Тут будет поле ввода для поиска   -->
+        <form class="search-form" action="echo.htmlacademy.ru" method="post">
+          <input class="search-field" type="search" placeholder="Поиск:" aria-label="Поле поиска по сайту">
+        </form>
         <ul class="user-menu">
          <li class="user-menu-bookmarks"><a href="#">Закладки</a></li>
          <li class="user-menu-basket"><a href="#">Корзина: 10</a></li>
-         <li class="user-menu-order button"><a href="#">Оформить заказ</a></li>
+         <li class="user-menu-order"><a class="button button-order" href="#">Оформить заказ</a></li>
         </ul>
       </div>
       <p class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</p>
@@ -43,7 +45,7 @@
       <ul class="breadscrumbs">
         <li>
           <a href="index.html">
-            <img src="home.svg" alt="главная">
+            <img src="icon-home.svg" alt="главная">
           </a>
         </li>
         <li><a href="#">Каталог</a></li>
@@ -54,25 +56,56 @@
       <section class="filters">
         <h2 class="visual-hidden">Фильтр товаров</h2>
         <!--    Ползунок цены    -->
-        <div class="manufactures">
-          <h3>Производители:</h3>
-          <ul class="manufactures-list">
-            <li>bosch</li>
-            <li>интерскол</li>
-            <li>makita</li>
-            <li>dewalt</li>
-            <li>hitachi</li>
-          </ul>
-        </div>
-        <div class="power">
-          <h3>Питание:</h3>
-          <ul class="power-list">
-            <li>Аккумуляторные</li>
-            <li>Сетевые</li>
-          </ul>
-        </div>
-        <a class="button" href="#">Показать</a> 
-        <!--    Не могу понять какой тег тут использовать    -->
+        <form action="echo.htmlacademy.ru" method="post">
+          <fieldset class="manufactures">
+            <legend>Производители:</legend>
+            <ul class="manufactures-list">
+              <li>
+                <label>
+                  <input type="checkbox" name="bosch">bosch
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Интерскол">Интерскол
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Makita">Makita
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Dewalt">Dewalt
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Hitachi">Hitachi
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="power">
+            <legend>Питание:</legend>
+            <ul class="power-list">
+              <li>
+                <label>
+                  <input type="radio" name="power" value="accum">Аккумуляторные
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="power" value="network">Сетевые
+                </label>
+              </li>
+       <!--     Почему при повторном нажатии на пробел убрать галочку с радиокнопки не получеетс? Один раз выбрал и больше такой возможности нет         -->
+            </ul>
+          </fieldset>
+          <a class="button" href="#">Показать</a> 
+         <!--    Не могу понять какой тег тут использовать. По идее при нажатии нас должно отправлять на новую страницу с отсортированными товарами. Либо же результаты будут показываться сразу справа в этом же окне? Тогда скорее всего уместнее будет использовать баттон или инпут submit?   -->
+        </form>
       </section>
       <!--   Тут будет сортировка товаров   -->
       <section class="results">
@@ -87,7 +120,7 @@
             </p>
             <p class="catalog-item-price">
               <del>22500 Р.</del>
-              <a class="button" href="#">15500 Р.</a>
+              <a class="button" href="#" aria-label="цена 15500 рублей">15500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item">
@@ -99,7 +132,7 @@
             </p>
             <p class="catalog-item-price">
               <del>30500 Р.</del>
-              <a class="button" href="#">25500 Р.</a>
+              <a class="button" href="#" aria-label="цена 25500 рублей">25500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item item-new">
@@ -111,7 +144,7 @@
             </p>
             <p class="catalog-item-price">
               <del></del>
-              <a class="button" href="#">12500 Р.</a>
+              <a class="button" href="#" aria-label="цена 12500 рублей">12500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item">
@@ -123,7 +156,7 @@
             </p>
             <p class="catalog-item-price">
               <del>22500 Р.</del>
-              <a class="button" href="#">15500 Р.</a>
+              <a class="button" href="#" aria-label="цена 15500 рублей">15500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item item-new">
@@ -135,7 +168,7 @@
             </p>
             <p class="catalog-item-price">
               <del>30500 Р.</del>
-              <a class="button" href="#">25500 Р.</a>
+              <a class="button" href="#" aria-label="цена 25500 рублей">25500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item item-new">
@@ -147,7 +180,7 @@
             </p>
             <p class="catalog-item-price">
               <del></del>
-              <a class="button" href="#">12500 Р.</a>
+              <a class="button" href="#" aria-label="цена 12500 рублей">12500 Р.</a>
             </p>
           </li>
            <li class="goods-catalog-item item-new">
@@ -159,7 +192,7 @@
             </p>
             <p class="catalog-item-price">
               <del>22500 Р.</del>
-              <a class="button" href="#">15500 Р.</a>
+              <a class="button" href="#" aria-label="цена 15500 рублей">15500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item">
@@ -171,7 +204,7 @@
             </p>
             <p class="catalog-item-price">
               <del>30500 Р.</del>
-              <a class="button" href="#">25500 Р.</a>
+              <a class="button" href="#" aria-label="цена 25500 рублей">25500 Р.</a>
             </p>
           </li>
           <li class="goods-catalog-item item-new">
@@ -183,7 +216,7 @@
             </p>
             <p class="catalog-item-price">
               <del></del>
-              <a class="button" href="#">12500 Р.</a>
+              <a class="button" href="#" aria-label="цена 12500 рублей">12500 Р.</a>
             </p>
           </li>
         </ul>
@@ -194,7 +227,7 @@
     <footer class="main-footer">
       <div class="ain-footer-site-navigation">
         <a class="main-footer-logo">
-          <img src="img/logo-footer.svg" alt="Техномарт" width="138" height="21">
+          <img src="img/logo-index.svg" alt="Техномарт" width="138" height="21">
         </a>
         <ul class="main-footer-site-navigation-list">
           <li><a href="#">Компания</a></li>
@@ -223,19 +256,29 @@
       </p>
       <div class="bottom-footer-social">
         <ul>
-          <li><a class="social-button" href="#"></a>Вконтакте</li>
-          <li><a class="social-button" href="#"></a>ВФейсбук</li>
-          <li><a class="social-button" href="#"></a>Инстаграм</li>
+          <li><a class="social-button" href="#" aria-label="Техномарт Вконтакте"></a></li>
+          <li><a class="social-button" href="#" aria-label="Техномарт Фейсбук"></a></li>
+          <li><a class="social-button" href="#" aria-label="Техномарт Инстаграм"></a></li>
         </ul>
       </div>
       <p class="bottom-footer-callback">
         <b>Обратная связь:</b>
-        <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+        <a href="mailto:mail@htmlacademy.ru" aria-label="написать письмо">mail@htmlacademy.ru</a>
       </p>
       <p class="bottom-footer-copyright-html">
         <b>Разработано</b>
         <a href="https://htmlacademy.ru">htmlacademy.ru</a>
       </p>
     </footer>
+    
+    <section class="modal modal-cart-add">
+      <h2>Товар добавлен в корзину!</h2>
+      <!--  Иконку подключим с стилях    -->
+      <ul class="cart-add-button-list">
+        <li><a class="button" href="#">Оформить заказ</a></li>
+        <li><button class="button modal-close" type="button">Продолжить покупки</button></li>
+      </ul>
+      <button class="modal-close" type="button">x</button>
+    </section>
   </body>
 </html>
