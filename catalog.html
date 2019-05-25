@@ -10,7 +10,7 @@
         <a class="main-header-logo" href="index.html">
           <img src="img/logo-index.svg" alt="Логотип магазина Техномарт" width="110" height="18">
         </a>
-        <form class="search-form" action="echo.htmlacademy.ru" method="post">
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
           <input class="search-field" type="search" placeholder="Поиск:" aria-label="Поле поиска по сайту">
         </form>
         <ul class="user-menu">
@@ -56,7 +56,7 @@
       <section class="filters">
         <h2 class="visual-hidden">Фильтр товаров</h2>
         <!--    Ползунок цены    -->
-        <form action="echo.htmlacademy.ru" method="post">
+        <form action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="manufactures">
             <legend>Производители:</legend>
             <ul class="manufactures-list">
@@ -92,7 +92,7 @@
             <ul class="power-list">
               <li>
                 <label>
-                  <input type="radio" name="power" value="accum">Аккумуляторные
+                  <input type="radio" name="power" value="accum" checked>Аккумуляторные
                 </label>
               </li>
               <li>
@@ -100,11 +100,9 @@
                   <input type="radio" name="power" value="network">Сетевые
                 </label>
               </li>
-       <!--     Почему при повторном нажатии на пробел убрать галочку с радиокнопки не получеетс? Один раз выбрал и больше такой возможности нет         -->
             </ul>
           </fieldset>
-          <a class="button" href="#">Показать</a> 
-         <!--    Не могу понять какой тег тут использовать. По идее при нажатии нас должно отправлять на новую страницу с отсортированными товарами. Либо же результаты будут показываться сразу справа в этом же окне? Тогда скорее всего уместнее будет использовать баттон или инпут submit?   -->
+          <input class="button" type="submit" value="Показать"> 
         </form>
       </section>
       <!--   Тут будет сортировка товаров   -->
@@ -225,10 +223,11 @@
         <!--Здесь будет секция про перфораторы-->
     </main>
     <footer class="main-footer">
-      <div class="ain-footer-site-navigation">
+      <section class="main-footer-site-navigation">
         <a class="main-footer-logo">
           <img src="img/logo-index.svg" alt="Техномарт" width="138" height="21">
         </a>
+        <h2 class="visual-hidden">Навигация по сайту</h2>
         <ul class="main-footer-site-navigation-list">
           <li><a href="#">Компания</a></li>
           <li><a href="#">Новости</a></li>
@@ -236,39 +235,42 @@
           <li><a href="#">Доставка</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-      </div>
+      </section>
       <p class="main-footer-contacts">
         г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
         +7 (812) 555-05-55
       </p>
-      <ul class="main-footer-services-list">
-        <li><a href="#">Материалы</a></li>
-        <li><a href="#">Спецтехника</a></li>
-        <li><a href="#">Инструмент</a></li>
-        <li><a href="#">Спецпредложения</a></li>
-      </ul>
-    </footer>
-      
-    <footer class="bottom-footer">
-      <p class="bottom-footer-copyright-mart">
-        © 2010–2019 Компания «Техномарт»<br>
-        Все права защищены
-      </p>
-      <div class="bottom-footer-social">
-        <ul>
-          <li><a class="social-button" href="#" aria-label="Техномарт Вконтакте"></a></li>
-          <li><a class="social-button" href="#" aria-label="Техномарт Фейсбук"></a></li>
-          <li><a class="social-button" href="#" aria-label="Техномарт Инстаграм"></a></li>
+      <section class="main-footer-services">
+        <h2 class="visually-hidden">Список предоставляемых услуг и товаров</h2>
+        <ul class="main-footer-services-list">
+          <li><a href="#">Материалы</a></li>
+          <li><a href="#">Спецтехника</a></li>
+          <li><a href="#">Инструмент</a></li>
+          <li><a href="#">Спецпредложения</a></li>
         </ul>
-      </div>
-      <p class="bottom-footer-callback">
-        <b>Обратная связь:</b>
-        <a href="mailto:mail@htmlacademy.ru" aria-label="написать письмо">mail@htmlacademy.ru</a>
-      </p>
-      <p class="bottom-footer-copyright-html">
-        <b>Разработано</b>
-        <a href="https://htmlacademy.ru">htmlacademy.ru</a>
-      </p>
+      </section>
+      <section class="bottom-footer">
+        <h2 class="visually-hidden">Наши контакты</h2>
+        <p class="bottom-footer-copyright-mart">
+          © 2010–2019 Компания «Техномарт»<br>
+          Все права защищены
+        </p>
+        <div class="bottom-footer-social">
+          <ul>
+            <li><a class="social-button" href="#">Техномарт Вконтакте</a></li>
+            <li><a class="social-button" href="#">Техномарт Фейсбук</a></li>
+            <li><a class="social-button" href="#">Техномарт Инстаграм</a></li>
+          </ul>
+        </div>
+        <p class="bottom-footer-callback">
+          <b>Обратная связь:</b>
+          <a href="mailto:mail@htmlacademy.ru" aria-label="написать письмо">mail@htmlacademy.ru</a>
+        </p>
+        <p class="bottom-footer-copyright-html">
+          <b>Разработано</b>
+          <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+        </p>
+      </section>
     </footer>
     
     <section class="modal modal-cart-add">

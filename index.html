@@ -10,14 +10,13 @@
         <a class="main-header-logo">
           <img src="img/logo-index.svg" alt="Логотип магазина Техномарт" width="110" height="18">
         </a>
-        <form class="search-form" action="echo.htmlacademy.ru" method="post">
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
           <input class="search-field" type="search" placeholder="Поиск:" aria-label="Поле поиска по сайту">
         </form>
         <ul class="user-menu">
          <li class="user-menu-bookmarks"><a href="#">Закладки</a></li>
          <li class="user-menu-basket"><a href="#">Корзина</a></li>
          <li class="user-menu-order"><a class="button button-order" href="#">Оформить заказ</a></li>
-<!--   класс баттон присваиваем элементу списка или ссылке в нем?     -->
         </ul>
       </div>
       <h1>Интернет-магазин строительных материалов и инструментов для ремонта</h1>
@@ -125,11 +124,11 @@
       </section>
     </main> 
     <footer class="main-footer">
-      <div class="main-footer-site-navigation">
+      <section class="main-footer-site-navigation">
         <a class="main-footer-logo">
           <img src="img/logo-index.svg" alt="Техномарт" width="138" height="21">
         </a>
-<!-- Почему таб проскакивает мимо логотипа? -->
+        <h2 class="visual-hidden">Навигация по сайту</h2>
         <ul class="main-footer-site-navigation-list">
           <li><a href="#">Компания</a></li>
           <li><a href="#">Новости</a></li>
@@ -137,45 +136,47 @@
           <li><a href="#">Доставка</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-      </div>
+      </section>
       <p class="main-footer-contacts">
         г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
         +7 (812) 555-05-55
       </p>
-      <ul class="main-footer-services-list" aria-label="Список предоставляемых услуг и товаров">
-<!--   Можно ли присваивать ариалейбл этому списку? Валидатор ругается   -->
-        <li><a href="#">Материалы</a></li>
-        <li><a href="#">Спецтехника</a></li>
-        <li><a href="#">Инструмент</a></li>
-        <li><a href="#">Спецпредложения</a></li>
-      </ul>
-    </footer>
-      
-    <footer class="bottom-footer">
-      <p class="bottom-footer-copyright-mart">
-        © 2010–2019 Компания «Техномарт»<br>
-        Все права защищены
-      </p>
-      <div class="bottom-footer-social">
-        <ul>
-          <li><a class="social-button" href="#" aria-label="Техномарт Вконтакте"></a></li>
-          <li><a class="social-button" href="#" aria-label="Техномарт Фейсбук"></a></li>
-          <li><a class="social-button" href="#" aria-label="Техномарт Инстаграм"></a></li>
+      <section class="main-footer-services">
+        <h2 class="visually-hidden">Список предоставляемых услуг и товаров</h2>
+        <ul class="main-footer-services-list">
+          <li><a href="#">Материалы</a></li>
+          <li><a href="#">Спецтехника</a></li>
+          <li><a href="#">Инструмент</a></li>
+          <li><a href="#">Спецпредложения</a></li>
         </ul>
-      </div>
-      <p class="bottom-footer-callback">
-        <b>Обратная связь:</b>
-        <a href="mailto:mail@htmlacademy.ru" aria-label="написать письмо">mail@htmlacademy.ru</a>
-      </p>
-      <p class="bottom-footer-copyright-html">
-        <b>Разработано</b>
-        <a href="https://htmlacademy.ru">htmlacademy.ru</a>
-      </p>
+      </section>
+      <section class="bottom-footer">
+        <h2 class="visually-hidden">Наши контакты</h2>
+        <p class="bottom-footer-copyright-mart">
+          © 2010–2019 Компания «Техномарт»<br>
+          Все права защищены
+        </p>
+        <div class="bottom-footer-social">
+          <ul>
+            <li><a class="social-button" href="#">Техномарт Вконтакте</a></li>
+            <li><a class="social-button" href="#">Техномарт Фейсбук</a></li>
+            <li><a class="social-button" href="#">Техномарт Инстаграм</a></li>
+          </ul>
+        </div>
+        <p class="bottom-footer-callback">
+          <b>Обратная связь:</b>
+          <a href="mailto:mail@htmlacademy.ru" aria-label="написать письмо">mail@htmlacademy.ru</a>
+        </p>
+        <p class="bottom-footer-copyright-html">
+          <b>Разработано</b>
+          <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+        </p>
+      </section>
     </footer>
     
     <section class="modal modal-contact">
       <h2 class="visual-hidden">Форма обращения</h2>
-      <form class="contacn-form" action="echo.htmlacademy.ru" method="post">
+      <form class="contacn-form" action="https://echo.htmlacademy.ru" method="post">
         <fieldset>
           <legend class="visual-hidden">Поля для ввода данных</legend>
             <p>
