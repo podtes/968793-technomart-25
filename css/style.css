@@ -1,0 +1,501 @@
+body {
+  margin: 0;
+  padding: 0;
+  
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Cuprum, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 17px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: #f3f7f9;
+}
+
+.index-title {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+  font-weight: normal;
+}
+
+.main-header-menu {
+  background-color: #293449;
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.main-header-logo {
+  background: #ee3643;
+}
+
+/* Нужно ли обернуть ссылку с изображением еще в один контейнер и уже ему задавать фон? Рамку позже добавить, когда буду расставлять блоки?*/
+
+.search-field {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+.search-field:hover {
+  background: #212a3a;
+}
+
+.search-field:focus {
+  color: #000000;
+  background: #ffffff;
+}
+
+.search-field::placeholder {
+  color: #ffffff;
+}
+
+.user-menu {
+  list-style: none;
+}
+
+.user-menu li {
+  text-align: center;
+}
+
+.user-menu-bookmarks:hover,
+.user-menu-basket:hover {
+  background: #212a3a;
+}
+
+.user-menu-bookmarks:active,
+.user-menu-basket:active {
+  background: #161d29;
+}
+
+.user-menu-bookmarks a:active,
+.user-menu-basket a:active {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.user-menu a {
+  color: #ffffff;
+  background: transparent;
+}
+
+.user-menu-order {
+  background: #63a63e;
+}
+
+.user-menu-order:hover {
+  background: #5fbb2d;
+}
+
+.user-menu-order:active {
+  background: #518534;
+}
+
+.user-menu-order a:active {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header-contacts-telephone {
+  font-size: 21px;
+  line-height: 21px;
+  color: #ee3643;
+  border: 3px solid #ffffff;
+}
+
+.header-contacts-adress {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.main-header-user-navigation {
+  list-style: none;
+}
+
+.main-header-user-navigation li {
+  background: #ffffff;
+  text-align: center;
+}
+
+/*позиционирование контента задаем в блоке-родителе, а параметры контента уже непосредственно в контейнере, в котором он находится? Правильно понимаю, вот как на примере выше и ниже*/
+
+.main-header-user-navigation a {
+  font-size: 21px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.main-header-user-navigation a:hover {
+  color: #ee3643;
+}
+
+.main-header-user-navigation a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  font-size: 17px;
+  line-height: 17px;
+  color: #ffffff;
+  background-color: #32425c;
+  border-bottom: 5px solid #293449;
+}
+
+.main-header-site-navigation {
+  list-style: none;
+}
+
+.main-header-site-navigation li {
+  background-color: transparent;
+  text-align: center;
+}
+
+.main-header-site-navigation li:hover {
+  background: #293449;
+}
+
+
+.main-header-site-navigation a {
+  color: #ffffff;
+}
+
+.main-header-site-navigation a:active {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about-us h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.about-us p {
+  font-family: PT Sans, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.transport-company-list {
+  list-style: none;
+  font-size: 18px;
+  line-height: 20px;
+  
+  background: #ffffff;
+  color: #000000;
+}
+
+.about-us .button {
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  
+  background-color: #ee3643;
+}
+
+.about-us .button:hover {
+  background-color: #ca2c37;
+}
+
+.about-us .button:active {
+  background-color: #ba2732;
+}
+
+.contacts h2 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.contacts p {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.contacts .button {
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  
+  background-color: #ee3643;
+}
+
+.contacts .button:hover {
+  background-color: #ca2c37;
+}
+
+.contacts .button:active {
+  background-color: #ba2732;
+}
+
+.main-footer-logo {
+  background-color: #ee3643;
+  border-bottom: 5px solid #b52933;
+}
+
+.footer-index {
+  background-color: #32425c;
+}
+
+.main-footer-contacts {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.main-footer-site-navigation-list {
+  list-style: none;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.main-footer-site-navigation-list li {
+  background-color: transparent;
+  text-align: center;
+}
+
+.main-footer-site-navigation-list a {
+  color: #ffffff;
+} 
+
+.main-footer-site-navigation-list a:hover {
+  text-decoration: underline;
+} 
+
+.main-footer-site-navigation-list a:active {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+} 
+
+.main-footer-services-list {
+  list-style: none;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.main-footer-services-list li {
+  background-color: transparent;
+  text-align: center;
+}
+
+.main-footer-services-list a {
+  color: #ffd180;
+}
+
+.main-footer-services-list a:hover {
+  text-decoration: underline;
+}
+
+.main-footer-services-list a:active {
+  color: rgba(255, 209, 128, 0.5);
+  text-decoration: none;
+}
+
+.bottom-footer {
+  background: #293449;
+  color: #ffffff;
+}
+
+.bottom-footer p {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.bottom-footer-social ul {
+  list-style: none;
+}
+
+.bottom-footer-social a {
+  color: #ffffff;
+}
+
+/*hover тоже просто прописать ссылкам?*/
+
+.bottom-footer-callback a,
+.bottom-footer-copyright-html a {
+  color: #ffd180;
+}
+
+.bottom-footer-callback a:hover,
+.bottom-footer-copyright-html a:hover {
+  text-decoration: underline;
+}
+
+.bottom-footer-callback a:active,
+.bottom-footer-copyright-html a:active {
+  text-decoration: none;
+  color: #ee3643;
+}
+
+.main-header-user-navigation-catalog {
+  list-style: none;
+}
+
+.main-header-user-navigation-catalog a {
+  color: #32425c;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
+}
+
+.main-header-user-navigation-catalog li:first-child {
+  background: #ffffff;
+}
+
+.catalog-basket {
+  background-color: #ee3643;
+}
+
+
+.main-header-user-navigation-catalog .logout-button {
+  color: #000000;
+  text-decoration: none;
+  
+  font-size: 21px;
+  line-height: 21px;
+}
+  
+.main-header-user-navigation-catalog a:not(.logout-button):hover {
+  color: #ee3643;
+}
+
+.main-header-user-navigation-catalog a:active {
+  opacity: 0.3;
+}
+
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs a {
+  font-family: PT Sans, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.catalog-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #32425c;
+  background-color: #f2f6f8;
+  font-weight: normal;
+}
+
+.filters-form  {
+  font-family: PT Sans, Arial, sans-serif;
+  text-transform: uppercase;
+
+}
+
+.filters-form fieldset {
+  border: none;
+}
+
+.filters-form legend {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.filters-form ul {
+  list-style: none;
+}
+
+.filters-form label {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.filters-form input:disabled {
+  opacity: 0.3;
+}
+
+/* не могу понять как сделать подпись к баттону тоже прозрачной, если он неактивен*/
+
+.filters-form .button {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  
+  border: 1px solid #e5e5e5;
+  border-radius: 1px;
+}
+
+.results-goods-catalog {
+  list-style: none;
+}
+
+.results li {
+  text-align: center;
+  border: 1px solid #e5e5e5;
+/* временные стили для удобства*/
+  width: 218px;
+  height: 316px;
+  margin-bottom: 20px;
+}
+
+.results li:hover {
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5); 
+  background: none;
+  
+}
+
+
+.results h3 a {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+.results del {
+  line-height: 18px;
+  font-weight: bold;
+  color: #999999;
+}
+
+.goods-catalog-item .button {
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: bold;
+  
+  background-color: #ee3643;
+  color: #ffffff;
+}
+
+
+/* как добавить флаг new поверх картинки? */
+.goods-catalog-item .item-new {
+  background-image: url(../img/new-flag.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+  display: none;
+}
