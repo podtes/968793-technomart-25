@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 
-header {
+.main-header {
   background: #f3f7f9;
 }
 
@@ -123,8 +123,6 @@ header {
   text-align: center;
 }
 
-/*позиционирование контента задаем в блоке-родителе, а параметры контента уже непосредственно в контейнере, в котором он находится? Правильно понимаю, вот как на примере выше и ниже*/
-
 .main-header-user-navigation a {
   font-size: 21px;
   line-height: 21px;
@@ -139,7 +137,7 @@ header {
   color: rgba(0, 0, 0, 0.3);
 }
 
-nav {
+.main-navigation {
   font-size: 17px;
   line-height: 17px;
   color: #ffffff;
@@ -315,8 +313,6 @@ nav {
   color: #ffffff;
 }
 
-/*hover тоже просто прописать ссылкам?*/
-
 .bottom-footer-callback a,
 .bottom-footer-copyright-html a {
   color: #ffd180;
@@ -474,10 +470,7 @@ nav {
 }
 
 
-/* как добавить флаг new поверх картинки? */
-.goods-catalog-item .item-new {
-  background-image: url(../img/new-flag.png) no-repeat;
-}
+/* как добавить флаг new поверх картинки? Потом сверстаю короч */
 
 
 
