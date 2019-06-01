@@ -14,8 +14,33 @@ a {
   text-decoration: none;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+
+.container {
+  width: 960px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
 .main-header {
   background: #f3f7f9;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 60px;
+}
+
+.main-header-menu-container {
+  display: flex;
+  margin-bottom: 46px;
 }
 
 .index-title {
@@ -24,6 +49,12 @@ a {
   line-height: 23px;
   color: #ee3643;
   font-weight: normal;
+  
+  width: 300px;
+  
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
 }
 
 .main-header-menu {
@@ -35,9 +66,16 @@ a {
 
 .main-header-logo {
   background: #ee3643;
+  width: 220px;
+  height: 42px;
 }
 
 /* Нужно ли обернуть ссылку с изображением еще в один контейнер и уже ему задавать фон? Рамку позже добавить, когда буду расставлять блоки?*/
+
+.search-form {
+  width: 270px;
+  margin-right: auto;
+}
 
 .search-field {
   background: transparent;
@@ -60,10 +98,21 @@ a {
 
 .user-menu {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .user-menu li {
   text-align: center;
+}
+
+.user-menu-bookmarks {
+  width: 155px;
+}
+
+.user-menu-basket {
+  width: 155px;
 }
 
 .user-menu-bookmarks:hover,
@@ -88,6 +137,7 @@ a {
 
 .user-menu-order {
   background: #63a63e;
+  width: 150px;
 }
 
 .user-menu-order:hover {
@@ -102,20 +152,38 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.header-contacts-title-container {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.main-header-contacts {
+  width: 300px;
+  margin-right: auto;
+}
+
 .header-contacts-telephone {
   font-size: 21px;
   line-height: 21px;
   color: #ee3643;
   border: 3px solid #ffffff;
+  
+  box-sizing: border-box;
 }
 
 .header-contacts-adress {
   font-size: 14px;
   line-height: 24px;
+  
+  margin: 0;
+  padding: 0;
 }
 
 .main-header-user-navigation {
   list-style: none;
+  
+  margin: 0;
+  padding: 0;
 }
 
 .main-header-user-navigation li {
@@ -147,6 +215,17 @@ a {
 
 .main-header-site-navigation {
   list-style: none;
+  
+  margin: 0;
+  padding: 0;
+  padding-left: 52px;
+  padding-right: 54px;
+  padding-top: 22px;
+  padding-bottom: 18px;
+  
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .main-header-site-navigation li {
@@ -167,9 +246,29 @@ a {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.about-us-contacts-container {
+  display: flex;
+  
+  padding-top: 82px;
+  padding-bottom: 86px;
+  /* временный, пока нет содержимого выше */
+  
+}
+
+.about-us {
+  width: 540px;
+  
+  margin-right: auto;
+  
+}
+
 .about-us h2 {
   font-size: 30px;
   line-height: 30px;
+  
+  margin: 0;
+  padding: 0;
+  
   text-transform: uppercase;
 }
 
@@ -177,12 +276,18 @@ a {
   font-family: PT Sans, Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
+  
+  margin: 0;
+  padding: 0;
 }
 
 .transport-company-list {
   list-style: none;
   font-size: 18px;
   line-height: 20px;
+  
+  margin: 0;
+  padding: 0;
   
   background: #ffffff;
   color: #000000;
@@ -205,14 +310,24 @@ a {
   background-color: #ba2732;
 }
 
+.contacts {
+  width: 300px;
+}
+
 .contacts h2 {
   font-size: 30px;
   line-height: 30px;
+  
+  margin: 0;
+  padding: 0;
 }
 
 .contacts p {
   font-size: 13px;
   line-height: 24px;
+  
+  margin: 0;
+  padding: 0;
 }
 
 .contacts .button {
@@ -235,9 +350,13 @@ a {
 .main-footer-logo {
   background-color: #ee3643;
   border-bottom: 5px solid #b52933;
+  
+  width: 220px;
+  height: 68px;
+  margin-right: 170px;
 }
 
-.footer-index {
+.main-footer {
   background-color: #32425c;
 }
 
@@ -247,10 +366,23 @@ a {
   line-height: 24px;
 }
 
+.main-footer-site-navigation {
+  display: flex;
+  margin-bottom: 35px;
+}
+
 .main-footer-site-navigation-list {
   list-style: none;
   font-size: 18px;
   line-height: 24px;
+  width: 570px;
+  
+  margin: 0;
+  padding: 0;
+  margin-top: 45px;
+  
+  display: flex;
+  justify-content: space-between;
 }
 
 .main-footer-site-navigation-list li {
@@ -271,10 +403,36 @@ a {
   text-decoration: none;
 } 
 
+
+.main-footer-contacts {
+  padding: 0;
+  margin: 0;
+  
+  width: 380px;
+  padding-left: 6px;
+  margin-right: auto;
+}
+
+.main-footer-services {
+  display: flex;
+  padding-bottom: 59px;
+  box-sizing: border-box;
+}
+
 .main-footer-services-list {
   list-style: none;
   font-size: 18px;
   line-height: 24px;
+  
+  padding: 0;
+  margin: 0;
+  
+  width: 540px;
+  padding-left: 15px;
+  
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .main-footer-services-list li {
@@ -298,19 +456,50 @@ a {
 .bottom-footer {
   background: #293449;
   color: #ffffff;
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.container-copyright-social-mail {
+  padding-left: 15px;
+  
+  display: flex;
 }
 
 .bottom-footer p {
   font-size: 16px;
   line-height: 18px;
+  
+  padding: 0;
+  margin: 0;
 }
 
-.bottom-footer-social ul {
+.bottom-footer-copyright-mart {
+  width: 240px;
+  margin-right: 150px;
+/* почему тут не работает маргин? */
+}
+
+.bottom-footer-social {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  width: 150px;
+  margin-right: 100px;
 }
 
 .bottom-footer-social a {
   color: #ffffff;
+}
+
+.bottom-footer-callback {
+  width: 160px;
+  margin-right: auto;
+}
+
+.bottom-footer-copyright-mail {
+  width: 98px;
 }
 
 .bottom-footer-callback a,
@@ -328,6 +517,15 @@ a {
   text-decoration: none;
   color: #ee3643;
 }
+
+/*КАТАЛОГ*/
+
+
+
+.container-main {
+  padding-top: 23px;
+}
+
 
 .main-header-user-navigation-catalog {
   list-style: none;
@@ -348,6 +546,9 @@ a {
   background-color: #ee3643;
 }
 
+.main-header-user-navigation-catalog li:first-child {
+  width: 300px;
+}
 
 .main-header-user-navigation-catalog .logout-button {
   color: #000000;
@@ -367,6 +568,14 @@ a {
 
 .breadcrumbs {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  
+  display: flex;
+  width: 380px;
+  padding-right: 24px;
+  justify-content: space-between;
 }
 
 .breadcrumbs a {
@@ -384,6 +593,12 @@ a {
   color: #32425c;
   background-color: #f2f6f8;
   font-weight: normal;
+  
+  padding: 0;
+  margin: 0;
+  padding-top: 32px;
+  padding-bottom: 35px;
+  padding-left: 26px;
 }
 
 .filters-form  {
@@ -402,14 +617,23 @@ a {
   font-weight: bold;
 }
 
-.filters-form ul {
+.filters-form .manufactures-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filters-form .power-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .filters-form label {
   font-size: 15px;
   line-height: 20px;
 }
+
 
 .filters-form input:disabled {
   opacity: 0.3;
@@ -428,6 +652,11 @@ a {
 
 .results-goods-catalog {
   list-style: none;
+  
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .results li {
