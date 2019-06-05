@@ -14,21 +14,27 @@ a {
   text-decoration: none;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding:0 !important;
-  border:0 !important;
-  height: 1px !important; 
-  width: 1px !important; 
+.visually-hidden,
+input[type="checkbox"].visually-hidden,
+input[type="checkbox"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
 .container {
   width: 960px;
   padding: 0 10px;
-  margin: 0 auto;
+  margin: 0 auto; 
+  
+  box-sizing: border-box;
 }
 
 .main-header {
@@ -54,8 +60,13 @@ a {
   
   margin: 0;
   padding: 0;
+  padding-top: 3px;
+  padding-left: 52px;
   margin-right: 20px;
+  box-sizing: border-box;
 }
+
+/* Насколько уместно использовать бр в заголовке?*/
 
 .main-header-menu {
   background-color: #293449;
@@ -66,30 +77,109 @@ a {
 
 .main-header-logo {
   background: #ee3643;
+  
   width: 220px;
   height: 42px;
+  
+  position: relative;
 }
 
-/* Нужно ли обернуть ссылку с изображением еще в один контейнер и уже ему задавать фон? Рамку позже добавить, когда буду расставлять блоки?*/
+.main-header-logo:hover {
+  background: #ca2c37;
+}
+
+.main-header-logo:active {
+  background-color: #ba2732;
+}
+
+.main-header-logo::before {
+  content: "";
+  position: absolute;
+  
+  background-color: #b52933;
+  width: 220px;
+  height: 5px;
+  
+  top: 42px;
+}
+
+.main-header-logo:hover::before {
+  background-color: #9a212a;
+}
+
+.main-header-logo:active::before {
+  background-color: #8e1e26;
+}
+
+.main-header-logo img {
+  position: absolute;
+  right: 56px;
+  top: 13px;
+  
+/* от какого угла толкается надпись? То что она отталкивается от родительского блока релатив понятно, но от какой точки именно? */
+}
+
+  
+/* самой форме .search-form можно не задавать размеры, если инпут search внутри нее занимает все место и ему явно задана ширина? Мне кажется задавание фиксированной ширины единственным решением, потому что в стайлгайде в фокусе даже пустое поле полностью меняет фон всей формы*/
 
 .search-form {
-  width: 270px;
-  margin-right: auto;
+  position: relative;
 }
+
+.search-form::before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-search.svg") no-repeat 0 0;
+  width: 17px;
+  height: 17px;
+  
+  left: 17px;
+  top: 12px;
+  
+  opacity: 0.3;
+}
+
+.search-form:hover {
+  background: #212a3a;
+}
+
+
+.search-form:hover::before {
+  opacity: 1;
+}
+
+.search-form:focus:before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-search-red.svg") no-repeat 0 0;
+  width: 17px;
+  height: 17px;
+  
+  left: 487px;
+  top: 12px;
+  
+  opacity: 1;
+}
+
+
+/* Не очень понятно почему не появляется иконка при создании псевдоэлемента на инпут, а не на форму*/
 
 .search-field {
   background: transparent;
   border: none;
   color: #ffffff;
-}
-
-.search-field:hover {
-  background: #212a3a;
+  
+  width: 270px;
+  
+  padding: 11px 0 12px 48px;
+  box-sizing: border-box;
 }
 
 .search-field:focus {
-  color: #000000;
   background: #ffffff;
+  color: #000000;
 }
 
 .search-field::placeholder {
@@ -100,19 +190,79 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
+  
+  max-width: 450px;
+  
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.user-menu li {
-  text-align: center;
+.user-menu a {
+  color: #ffffff;
+  
+  display: block;
+  width: 150px;
+  
+  
+/* нормально ли то, что я задал всем кнопкам в списке явную ширину в 150рх? А их флекс-контейнеру 450 соответственно */
+  
+  padding: 12px 20px;
+  box-sizing: border-box;
 }
 
-.user-menu-bookmarks {
-  width: 155px;
+.user-menu .user-menu-bookmarks {
+  padding-left: 44px;
+  position: relative;
 }
 
-.user-menu-basket {
-  width: 155px;
+.user-menu-bookmarks::before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-bookmark.svg") no-repeat 0 0;
+  width: 16px;
+  height: 18px;
+  left: 17px;
+  top: 12px;
+  
+  opacity: 0.3;
+}
+
+.user-menu-bookmarks:hover::before,
+.user-menu-bookmarks:focus::before{
+  opacity: 1;
+}
+
+.user-menu-bookmarks:active::before {
+  opacity: 0.5;
+}
+
+.user-menu .user-menu-basket {
+  padding-left: 49px;
+  position: relative;
+}
+
+.user-menu-basket::before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-basket.svg") no-repeat 0 0;
+  width: 16px;
+  height: 18px;
+  left: 18px;
+  top: 12px;
+  
+  opacity: 0.3;
+}
+
+.user-menu-basket:hover::before,
+.user-menu-basket:focus::before{
+  opacity: 1;
+}
+
+.user-menu-basket:active::before {
+  opacity: 0.5;
 }
 
 .user-menu-bookmarks:hover,
@@ -123,21 +273,13 @@ a {
 .user-menu-bookmarks:active,
 .user-menu-basket:active {
   background: #161d29;
-}
-
-.user-menu-bookmarks a:active,
-.user-menu-basket a:active {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.user-menu a {
-  color: #ffffff;
-  background: transparent;
-}
-
-.user-menu-order {
+.user-menu .user-menu-order {
+  padding-left: 20px;
+  padding-right: 22px;
   background: #63a63e;
-  width: 150px;
 }
 
 .user-menu-order:hover {
@@ -146,15 +288,13 @@ a {
 
 .user-menu-order:active {
   background: #518534;
-}
-
-.user-menu-order a:active {
   color: rgba(255, 255, 255, 0.5);
 }
 
 .header-contacts-title-container {
   display: flex;
-  margin-bottom: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 39px;
 }
 
 .main-header-contacts {
@@ -167,16 +307,38 @@ a {
   line-height: 21px;
   color: #ee3643;
   border: 3px solid #ffffff;
+  display: block;
+  position: relative;
   
+  width: 270px;
+  padding: 9px 45px 9px 71px;
   box-sizing: border-box;
 }
+
+/* Немного не совпадает с пиксель перфектом, это нормально? */
+
+.header-contacts-telephone::before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-phone.svg") no-repeat 0 0;
+  width: 19px;
+  height: 19px;
+  
+  left: 12px;
+  top: 10px;
+}
+
 
 .header-contacts-adress {
   font-size: 14px;
   line-height: 24px;
+  color: #32425c;
   
   margin: 0;
   padding: 0;
+  padding-top: 4px;
+  padding-left: 10px;
 }
 
 .main-header-user-navigation {
@@ -187,15 +349,47 @@ a {
 }
 
 .main-header-user-navigation li {
-  background: #ffffff;
-  text-align: center;
+  display: inline-block;
+  font-size: 0;
+  
+/* все равно маленький проьблем остался, компенсировал меньшим маргином от внопки "Войти" */
 }
 
 .main-header-user-navigation a {
   font-size: 21px;
   line-height: 21px;
   color: #000000;
+  background: #ffffff;
+  
+  display: block;
+  padding: 12px 24px;
+  box-sizing: border-box;
 }
+
+.main-header-user-navigation .login-button {
+  padding-right: 26px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 47px;
+  
+  margin-right: 6px; 
+  
+  position: relative;
+}
+
+.main-header-user-navigation .login-button:before {
+  content: "";
+  position: absolute;
+  
+  background: url("../img/icon-login.svg") no-repeat 0 0;
+  width: 20px;
+  height: 17px;
+  
+  left: 14px;
+  top: 14px;
+}
+
+/* Я так понимаю, что плодить одинаковые иконки с разными цветами не стоит? Нужно размещать их в html коде и потом изменять их цвет при разных состояниях с CSS?*/
 
 .main-header-user-navigation a:hover {
   color: #ee3643;
@@ -209,48 +403,50 @@ a {
   font-size: 17px;
   line-height: 17px;
   color: #ffffff;
-  background-color: #32425c;
-  border-bottom: 5px solid #293449;
 }
 
 .main-header-site-navigation {
   list-style: none;
+  background-color: #32425c;
+  border-bottom: 5px solid #293449;
   
   margin: 0;
   padding: 0;
-  padding-left: 52px;
-  padding-right: 54px;
-  padding-top: 22px;
-  padding-bottom: 18px;
-  
+  padding-left: 15px;
+  padding-right: 20px;
+
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   box-sizing: border-box;
 }
 
-.main-header-site-navigation li {
-  background-color: transparent;
-  text-align: center;
-}
-
-.main-header-site-navigation li:hover {
-  background: #293449;
-}
-
+/* как сделать отступы по краям контейнера? Поведение ссылок, как оно есть сейчас не подходит?*/
 
 .main-header-site-navigation a {
   color: #ffffff;
+  display: block;
+  
+  padding-top: 20px;
+  padding-bottom: 18px;
+  padding-left: 31px;
+  padding-right: 31px;
+}
+
+.main-header-site-navigation a:hover {
+  background: #293449;
 }
 
 .main-header-site-navigation a:active {
   color: rgba(255, 255, 255, 0.5);
+  background: #1d2739;
+  border-bottom: 5px solid #1d2739;
 }
 
 .about-us-contacts-container {
   display: flex;
   
-  padding-top: 82px;
-  padding-bottom: 86px;
+  padding-top: 79px;
+  padding-bottom: 95px;
   /* временный, пока нет содержимого выше */
   
 }
@@ -259,14 +455,15 @@ a {
   width: 540px;
   
   margin-right: auto;
-  
 }
 
 .about-us h2 {
   font-size: 30px;
   line-height: 30px;
+  font-weight: normal;
   
   margin: 0;
+  margin-bottom: 26px;
   padding: 0;
   
   text-transform: uppercase;
@@ -276,9 +473,14 @@ a {
   font-family: PT Sans, Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
-  
+  /* Надо увеличить letter-spacing для попадания в макет?  */
   margin: 0;
+  margin-bottom: 24px;
   padding: 0;
+}
+
+.about-us p:last-of-type {
+  margin-bottom: 21px;
 }
 
 .transport-company-list {
@@ -289,17 +491,49 @@ a {
   margin: 0;
   padding: 0;
   
+  padding-left: 36px;
+  
   background: #ffffff;
   color: #000000;
+}
+
+.transport-company-list li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.transport-company-list li:last-child {
+  margin-bottom: 46px;
+}
+
+.transport-company-list li {
+  position: relative;
+}
+
+.transport-company-list li:before {
+  content: "";
+  position: absolute;
+  
+  width: 25px;
+  height: 2px;
+  
+  background-color: #ee3643;
+  
+  left: -36px;
+  top: 9px;
 }
 
 .about-us .button {
   font-size: 14px;
   line-height: 18px;
   color: #ffffff;
-  text-align: center;
+  text-transform: uppercase;
+  
+  padding: 12px 40px 10px 40px;
   
   background-color: #ee3643;
+  border-radius: 3px;
+  
+  box-sizing: border-box;
 }
 
 .about-us .button:hover {
@@ -311,30 +545,47 @@ a {
 }
 
 .contacts {
+  
   width: 300px;
 }
 
 .contacts h2 {
   font-size: 30px;
   line-height: 30px;
+  text-transform: uppercase;
+  font-weight: normal;
   
   margin: 0;
+  margin-bottom: 26px;
   padding: 0;
 }
 
 .contacts p {
+  font-family: PT Sans, Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
   
   margin: 0;
+  margin-bottom: 31px;
   padding: 0;
+}
+
+.contacts img {
+  margin-bottom: 47px;
 }
 
 .contacts .button {
   font-size: 14px;
   line-height: 18px;
   color: #ffffff;
-  text-align: center;
+  
+  padding: 12px 59px 10px 64px;  
+  
+  /* можно ли задать кнопке просто ширину 100% и как-нибудь текст попроще выровнять? Или только так, как я выше написал */
+  
+  border-radius: 3px;
+  text-transform: uppercase;
+  
   
   background-color: #ee3643;
 }
@@ -349,11 +600,46 @@ a {
 
 .main-footer-logo {
   background-color: #ee3643;
-  border-bottom: 5px solid #b52933;
+  position: relative;
   
   width: 220px;
   height: 68px;
   margin-right: 170px;
+  
+  box-sizing: border-box;
+}
+
+.main-footer-logo:hover {
+  background: #ca2c37;
+}
+
+.main-footer-logo:active {
+  background-color: #ba2732;
+}
+
+.main-footer-logo::before {
+  content: "";
+  position: absolute;
+  
+  background-color: #b52933;
+  width: 220px;
+  height: 5px;
+  
+  top: 63px;
+}
+
+.main-footer-logo:hover::before {
+  background-color: #9a212a;
+}
+
+.main-footer-logo:active::before {
+  background-color: #8e1e26;
+}
+
+.main-footer-logo img {
+  position: absolute;
+  top: 20px;
+  left: 40px;
 }
 
 .main-footer {
@@ -368,29 +654,29 @@ a {
 
 .main-footer-site-navigation {
   display: flex;
-  margin-bottom: 35px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
 }
 
 .main-footer-site-navigation-list {
   list-style: none;
   font-size: 18px;
   line-height: 24px;
-  width: 570px;
+  width: 550px;
   
   margin: 0;
   padding: 0;
-  margin-top: 45px;
+  margin-top: 38px;
   
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.main-footer-site-navigation-list li {
-  background-color: transparent;
-  text-align: center;
+  
+  /* Не получается сделать полное соответствие макету */
 }
 
 .main-footer-site-navigation-list a {
+  display: block;
   color: #ffffff;
 } 
 
@@ -409,13 +695,13 @@ a {
   margin: 0;
   
   width: 380px;
-  padding-left: 6px;
+  padding-left: 3px;
   margin-right: auto;
 }
 
 .main-footer-services {
   display: flex;
-  padding-bottom: 59px;
+  padding-bottom: 49px;
   box-sizing: border-box;
 }
 
@@ -456,14 +742,16 @@ a {
 .bottom-footer {
   background: #293449;
   color: #ffffff;
-  padding-top: 35px;
+  padding-top: 37px;
   padding-bottom: 30px;
 }
 
 .container-copyright-social-mail {
-  padding-left: 15px;
+  padding-left: 11px;
+  padding-right: 25px;
   
   display: flex;
+  justify-content: space-between;
 }
 
 .bottom-footer p {
@@ -475,8 +763,9 @@ a {
 }
 
 .bottom-footer-copyright-mart {
+
   width: 240px;
-  margin-right: 150px;
+  margin-right: 200px;
 /* почему тут не работает маргин? */
 }
 
@@ -485,12 +774,23 @@ a {
   padding: 0;
   margin: 0;
   
+  display: flex;
+  
   width: 150px;
   margin-right: 100px;
 }
 
-.bottom-footer-social a {
-  color: #ffffff;
+.social-button {
+  width: 42px;
+  height: 42px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  
+  background-color: #212a3a;
+  border-radius: 50%;
 }
 
 .bottom-footer-callback {
@@ -501,6 +801,11 @@ a {
 .bottom-footer-copyright-mail {
   width: 98px;
 }
+
+.bottom-footer-copyright-html {
+  
+}
+
 
 .bottom-footer-callback a,
 .bottom-footer-copyright-html a {
