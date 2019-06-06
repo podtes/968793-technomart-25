@@ -115,11 +115,8 @@ input[type="checkbox"].visually-hidden {
   position: absolute;
   right: 56px;
   top: 13px;
-  
-/* от какого угла толкается надпись? То что она отталкивается от родительского блока релатив понятно, но от какой точки именно? */
 }
 
-  
 /* самой форме .search-form можно не задавать размеры, если инпут search внутри нее занимает все место и ему явно задана ширина? Мне кажется задавание фиксированной ширины единственным решением, потому что в стайлгайде в фокусе даже пустое поле полностью меняет фон всей формы*/
 
 .search-form {
@@ -163,9 +160,6 @@ input[type="checkbox"].visually-hidden {
   opacity: 1;
 }
 
-
-/* Не очень понятно почему не появляется иконка при создании псевдоэлемента на инпут, а не на форму*/
-
 .search-field {
   background: transparent;
   border: none;
@@ -203,9 +197,6 @@ input[type="checkbox"].visually-hidden {
   
   display: block;
   width: 150px;
-  
-  
-/* нормально ли то, что я задал всем кнопкам в списке явную ширину в 150рх? А их флекс-контейнеру 450 соответственно */
   
   padding: 12px 20px;
   box-sizing: border-box;
@@ -311,11 +302,11 @@ input[type="checkbox"].visually-hidden {
   position: relative;
   
   width: 270px;
-  padding: 9px 45px 9px 71px;
+  text-align: center;
+  padding: 9px 0;
+  padding-left: 21px;
   box-sizing: border-box;
 }
-
-/* Немного не совпадает с пиксель перфектом, это нормально? */
 
 .header-contacts-telephone::before {
   content: "";
@@ -343,6 +334,7 @@ input[type="checkbox"].visually-hidden {
 
 .main-header-user-navigation {
   list-style: none;
+  font-size: 0;
   
   margin: 0;
   padding: 0;
@@ -350,9 +342,6 @@ input[type="checkbox"].visually-hidden {
 
 .main-header-user-navigation li {
   display: inline-block;
-  font-size: 0;
-  
-/* все равно маленький проьблем остался, компенсировал меньшим маргином от внопки "Войти" */
 }
 
 .main-header-user-navigation a {
@@ -362,18 +351,15 @@ input[type="checkbox"].visually-hidden {
   background: #ffffff;
   
   display: block;
+  text-align: center;
   padding: 12px 24px;
   box-sizing: border-box;
 }
 
 .main-header-user-navigation .login-button {
+  margin-right: 10px;
   padding-right: 26px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 47px;
-  
-  margin-right: 6px; 
-  
+  padding-left: 50px;
   position: relative;
 }
 
@@ -382,14 +368,21 @@ input[type="checkbox"].visually-hidden {
   position: absolute;
   
   background: url("../img/icon-login.svg") no-repeat 0 0;
+  opacity: 0.3;
   width: 20px;
   height: 17px;
   
-  left: 14px;
+  left: 17px;
   top: 14px;
 }
 
-/* Я так понимаю, что плодить одинаковые иконки с разными цветами не стоит? Нужно размещать их в html коде и потом изменять их цвет при разных состояниях с CSS?*/
+.main-header-user-navigation .login-button:hover::before {
+  opacity: 1;
+}
+
+.main-header-user-navigation .login-button:active::before {
+  opacity: 0.3;
+}
 
 .main-header-user-navigation a:hover {
   color: #ee3643;
@@ -445,8 +438,8 @@ input[type="checkbox"].visually-hidden {
 .about-us-contacts-container {
   display: flex;
   
-  padding-top: 79px;
-  padding-bottom: 95px;
+  padding-top: 92px;
+  padding-bottom: 85px;
   /* временный, пока нет содержимого выше */
   
 }
@@ -502,7 +495,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .transport-company-list li:last-child {
-  margin-bottom: 46px;
+  margin-bottom: 36px;
 }
 
 .transport-company-list li {
@@ -524,17 +517,18 @@ input[type="checkbox"].visually-hidden {
 
 .about-us .button {
   font-size: 14px;
-  line-height: 18px;
   color: #ffffff;
   text-transform: uppercase;
-  
-  padding: 12px 40px 10px 40px;
+  display: block;
+  width: 220px;
+  text-align: center;
+  padding: 11px 0;
   
   background-color: #ee3643;
   border-radius: 3px;
   
   box-sizing: border-box;
-}
+} 
 
 .about-us .button:hover {
   background-color: #ca2c37;
@@ -571,17 +565,18 @@ input[type="checkbox"].visually-hidden {
 }
 
 .contacts img {
-  margin-bottom: 47px;
+  margin-bottom: 37px;
 }
 
 .contacts .button {
   font-size: 14px;
-  line-height: 18px;
   color: #ffffff;
   
-  padding: 12px 59px 10px 64px;  
-  
-  /* можно ли задать кнопке просто ширину 100% и как-нибудь текст попроще выровнять? Или только так, как я выше написал */
+  display: block;
+  width: 298px;
+  text-align: center;
+  padding: 11px 0;
+  padding-left: 2px;
   
   border-radius: 3px;
   text-transform: uppercase;
@@ -671,8 +666,6 @@ input[type="checkbox"].visually-hidden {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
-  /* Не получается сделать полное соответствие макету */
 }
 
 .main-footer-site-navigation-list a {
@@ -762,11 +755,9 @@ input[type="checkbox"].visually-hidden {
   margin: 0;
 }
 
-.bottom-footer-copyright-mart {
-
+.bottom-footer .bottom-footer-copyright-mart {
   width: 240px;
-  margin-right: 200px;
-/* почему тут не работает маргин? */
+  margin-right: 122px;
 }
 
 .bottom-footer-social {
@@ -776,13 +767,13 @@ input[type="checkbox"].visually-hidden {
   
   display: flex;
   
-  width: 150px;
-  margin-right: 100px;
+  width: 130px;
+  margin-right: 90px;
 }
 
 .social-button {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   
   display: flex;
   justify-content: center;
@@ -791,6 +782,11 @@ input[type="checkbox"].visually-hidden {
   
   background-color: #212a3a;
   border-radius: 50%;
+}
+
+.social-button:hover,
+.social-button:active {
+  background-color: #ee3643;
 }
 
 .bottom-footer-callback {
@@ -825,75 +821,174 @@ input[type="checkbox"].visually-hidden {
 
 /*КАТАЛОГ*/
 
-
-
 .container-main {
-  padding-top: 23px;
+  padding-top: 20px;
 }
 
 
 .main-header-user-navigation-catalog {
   list-style: none;
+  
+  margin: 0;
+  padding: 0;
+  
+  width: 300px;
 }
 
 .main-header-user-navigation-catalog a {
   color: #32425c;
   font-size: 16px;
-  line-height: 18px;
   text-decoration: underline;
-}
-
-.main-header-user-navigation-catalog li:first-child {
-  background: #ffffff;
 }
 
 .catalog-basket {
   background-color: #ee3643;
 }
 
-.main-header-user-navigation-catalog li:first-child {
-  width: 300px;
-}
-
 .main-header-user-navigation-catalog .logout-button {
+  display: block;
+  position: relative;
   color: #000000;
   text-decoration: none;
-  
   font-size: 21px;
-  line-height: 21px;
+  text-align: center;
+  
+  background-color: #ffffff;
+  
+  width: 300px;
+  padding: 14px 0;
+  padding-right: 20px;
+  margin-bottom: 8px;
+  
+  box-sizing: border-box;
+}
+
+.main-header-user-navigation-catalog .logout-button::before {
+  content: "";
+  position: absolute;
+  
+  background: url(../img/icon-user.svg) no-repeat 0 0;
+  width: 20px;
+  height: 18px;
+  opacity: 0.3;
+  
+  left: 14px;
+  top: 13px;
+}
+
+.main-header-user-navigation-catalog .logout-button:hover::before{
+  opacity: 1;
+}
+
+.main-header-user-navigation-catalog .logout-button:active::before{
+  opacity: 0.3;
+}
+
+.main-header-user-navigation-catalog .logout-button::after {
+  content: "";
+  position: absolute;
+  
+  background: url(../img/icon-logout.svg) no-repeat 0 0;
+  width: 21px;
+  height: 17px;
+  opacity: 0.3;
+  
+  left: 269px;
+  top: 14px;
+}
+
+.main-header-user-navigation-catalog .logout-button:hover::after {
+  opacity: 1;
+}
+
+.main-header-user-navigation-catalog .logout-button:active::after {
+  opacity: 0.3;
+}
+
+.main-header-user-navigation-catalog li:not(.logout-button) {
+  display: inline-block;
+}
+
+.main-header-user-navigation-catalog li:nth-child(2) {
+  margin-left: 18px;
+  margin-right: 27px;
+  
+  position: relative;
+}
+
+.main-header-user-navigation-catalog li:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  
+  height: 5px;
+  width: 5px;
+  
+  background-color: #32425c;
+  border-radius: 50%;
+  
+  top: 6px;
+  left: 89px;
 }
   
 .main-header-user-navigation-catalog a:not(.logout-button):hover {
   color: #ee3643;
 }
 
-.main-header-user-navigation-catalog a:active {
+.main-header-user-navigation-catalog a:not(.logout-button):active,
+.logout-button span:active {
   opacity: 0.3;
 }
+
+/* по другому добиться прозрачности текста не затрагивая белый фон у меня не получилось */
 
 .breadcrumbs {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 21px;
+  position: relative;
   
   display: flex;
   width: 380px;
-  padding-right: 24px;
-  justify-content: space-between;
 }
 
 .breadcrumbs a {
   font-family: PT Sans, Arial, sans-serif;
   font-size: 13px;
-  line-height: 18px;
   text-transform: uppercase;
   color: #000000;
+  
+  margin-right: 30px;
+  padding-right: 23px;
+  
+  position: relative;
 }
+
+.breadcrumbs a:after {
+  position: absolute;
+  content: "";
+  
+  height: 12px;
+  width: 8px;
+  
+  background: url(../img/icon-right-small.svg) no-repeat 0 0;
+  
+/* Не могу экспортировать иконку в нормальном формате, это как бы свг, но не свг. Я бы мог нарисовать сам ее в html, но не очень понимаю как ее встраивать и клонировать в css  */
+  
+  top: 10px;
+  left: 10px;
+}
+
+.right {
+  position: absolute;
+  
+  top: 3px;
+  left: 29px;
+}
+
 
 .catalog-title {
   font-size: 30px;
-  line-height: 30px;
   text-transform: uppercase;
   color: #32425c;
   background-color: #f2f6f8;
@@ -901,9 +996,9 @@ input[type="checkbox"].visually-hidden {
   
   padding: 0;
   margin: 0;
-  padding-top: 32px;
-  padding-bottom: 35px;
-  padding-left: 26px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  padding-left: 28px;
   margin-bottom: 20px;
 }
 
@@ -926,10 +1021,20 @@ input[type="checkbox"].visually-hidden {
   border: none;
 }
 
-.filters-form legend {
+.filters-form .manufactures {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.filters-form h3 {
   font-size: 17px;
   line-height: 30px;
   font-weight: bold;
+  
+  margin: 0;
+  padding: 0;
+  padding: 16px 0;
+  padding-bottom: 14px;
 }
 
 .manufactures,
@@ -938,16 +1043,25 @@ input[type="checkbox"].visually-hidden {
   margin: 0;
 }
 
-.filters-form .manufactures-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.power {
+  margin-bottom: 59px;
 }
 
+.filters-form .manufactures-list,
 .filters-form .power-list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  padding-left: 22px;
+}
+
+.filters-form .manufactures-list li,
+.filters-form .power-list li {
+  margin-bottom: 20px;
+}
+
+.filters-form .manufactures-list li:last-child {
+  margin-bottom: 22px;
 }
 
 .filters-form label {
@@ -960,15 +1074,17 @@ input[type="checkbox"].visually-hidden {
   opacity: 0.3;
 }
 
-/* не могу понять как сделать подпись к баттону тоже прозрачной, если он неактивен*/
-
-.filters-form .button {
+.filters-form .filters-button {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 0;
   text-transform: uppercase;
+  text-align: center;
+  
+  width: 140px;
+  padding: 18px 0;
   
   border: 1px solid #e5e5e5;
-  border-radius: 1px;
+  border-radius: 3px;
 }
 
 .results-goods-catalog {
@@ -982,43 +1098,205 @@ input[type="checkbox"].visually-hidden {
   justify-content: space-between;
 }
 
-.results li {
+.results .goods-catalog-item {
+  font-family: PT Sans, Arial, sans-serif;
+  
   text-align: center;
   border: 1px solid #e5e5e5;
-/* временные стили для удобства*/
   width: 220px;
-  height: 316px;
+  height: 318px;
+  position: relative;
+  
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
-.results li:hover {
+.results .goods-catalog-item:hover {
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.5); 
   background: none;
+}
+
+.goods-catalog-item:hover .actions {
+  display: block;
+}
+
+.flag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  
+  width: 60px;
+  height: 60px;
+  
+  text-indent: -1000px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.flag-new {
+  background: url(../img/new-flag.png) no-repeat 0 0;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  
+  width: 218px;
+  min-height: 170px;
+  padding-top: 43px;
+  
+  background-color: #ffffff;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.actions a {
+  font-family: Cuprum, Arial, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 0;
+  
+  margin: 0 auto;
+  padding: 19px 0;
+  width: 135px;
+  border-radius: 3px;
   
 }
 
+.actions .buy {
+  position: relative;
+  display: block;
+  color: #ffffff;
+  
+  padding-left: 3px;
+  margin-bottom: 8px;
+  
+  
+  
+  background-color: #63a63e;
+  box-shadow: inset 0 -3px 0 0 #367315;
+  box-sizing: border-box;
+}
 
-.results h3 a {
+.actions .buy:hover {
+  background: #5fbb2d;
+}
+
+.actions .buy:active {
+  background: #518534;
+  box-shadow: none;
+}
+
+.actions .buy:before {
+  content: "";
+  position: absolute;
+  
+  background: url(../img/icon-basket.svg) no-repeat 0 0;
+  width: 15px;
+  height: 15px;
+  
+  top: 11px;
+  right: 107px;
+  
+  opacity: 0.3;
+}
+
+.actions .buy:hover:before {
+  opacity: 1;
+}
+
+.actions .buy:active:before {
+  opacity: 0.3;
+}
+
+.actions .bookmark {
+  background: #ffffff;
+  color: #000000;
+  
+  padding: 16px 0;
+  padding-left: 3px;
+  
+  display: block;
+  border: 3px solid #63a63e;
+  
+  box-sizing: border-box;
+}
+
+.actions .bookmark:hover {
+  border-color: #32425c;
+}
+
+.actions .bookmark:active {
+  opacity: 0.3;
+}
+
+.goods-catalog-item .catalog-item-image {
+  margin-bottom: 6px;
+}
+
+.results .catalog-item-title,
+.results p {
+  margin: 0;
+  padding: 0;
+}
+
+.results .catalog-item-title {
+  margin-bottom: 12px;
+}
+
+
+.catalog-item-title a {
   font-size: 18px;
   line-height: 20px;
   font-weight: bold;
   color: #000000;
 }
 
+.catalog-item-discount {
+  margin-bottom: 10px;
+}
 
-.results del {
-  line-height: 18px;
+
+.catalog-item-discount del {
+  line-height: 0;
   font-weight: bold;
   color: #999999;
 }
 
-.goods-catalog-item .button {
+.catalog-item-price .button-price {
   font-size: 17px;
-  line-height: 18px;
+  line-height: 0;
   font-weight: bold;
+  text-align: center;
   
+  display: block;
+  position: relative;
+  
+  padding: 19px 0;
+  margin: 0 auto;
+  
+  width: 135px;
   background-color: #ee3643;
   color: #ffffff;
+  
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.catalog-item-price .button-price:after {
+  content: "";
+  
+  position: absolute;
+  top: 0;
+  right: -25px;
+  
+  width: 0;
+  height: 0;
+  
+  border: 19px solid white;
+  border-left-color: #ee3643;
 }
 
 
