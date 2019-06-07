@@ -129,6 +129,42 @@
           <p>Вы можете забрать товар сами,<br> заехав в наш офис:</p>
           <img src="img/map-small.png" alt="карта проезда в офис компании техномарт по адресу улица Большая Конюшенная дом 19">
           <a class="button contact-link" href="#">Заблудились? Напишите нам!</a>
+          <section class="modal modal-contact">
+            <h2 class="visually-hidden">Форма обращения</h2>
+            <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
+              <div class="modal-contact-container">
+                  <fieldset>
+                    <div class="fieldset-flexible">
+                      <legend class="visually-hidden">Поля для ввода данных</legend>
+                      <label class="contact-form-name">
+                        Ваше имя:<br>
+                        <input type="text" name="name" placeholder="Имя Фамилия" class="contact-form-name-field">
+                      </label>
+                      <label class="contact-form-email">
+                        Ваш e-mail:<br>ß
+                        <input type="email" name="email" placeholder="email@example.com" class="contact-form-email-field">
+                      </label>
+                      <label class="contact-form-message">
+                        Текст письма<br>
+                        <textarea  name="message" placeholder="В свободной форме" class="contact-form-message-field" rows="5">
+                        </textarea>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="contact-form-button-container">
+                  <div class="modal-contact-container">
+                    <button class="button" type="submit">Отправить</button>
+                  </div>
+                </div>
+            </form>
+            <button class="modal-close visually-hidden" type="button" aria-label="закрыть форму">x</button> 
+          </section>
+          <section class="modal modal-map">
+            <h2 class="visually-hidden">Как до нас добраться</h2>
+            <img class="map-big" src="img/map-big.png" width="940" height="446" alt="Офис компании по адресу ул.Большая Конюшенная 19/8, Санкт-Петербург">
+            <button class="modal-close visually-hidden" type="button">x</button>
+          </section>
         </section>
       </div>
     </main> 
@@ -219,44 +255,5 @@
         </div>
       </section>
     </footer>
-    
-    <section class="modal modal-contact">
-      <h2 class="visual-hidden">Форма обращения</h2>
-      <form class="contacn-form" action="https://echo.htmlacademy.ru" method="post">
-        <fieldset>
-          <legend class="visual-hidden">Поля для ввода данных</legend>
-            <p>
-              <label>
-              Ваше имя:<br>
-              <input type="text" name="name" placeholder="Имя Фамилия" class="contact-form-name">
-              </label>
-            </p>
-            <p>
-              <label>
-              Ваш e-mail:<br>
-              <input type="email" name="email" placeholder="email@example.com" class="contact-form-email">
-              </label>
-            </p>
-            <p>
-              <label>
-              Текст письма<br>
-              <textarea  name="message" placeholder="В свободной форме" class="contact-form-message">
-              </textarea>
-              </label>
-            </p>
-        </fieldset>
-        <button class="button" type="submit">Отправить</button>
-<!--    Выделил в fieldset, чтобы потом было проще стилизовать, потому что у полей ввода отличается фон на макете    -->
-      </form>
-      <button class="modal-close" type="button" aria-label="закрыть форму">х</button> 
-    </section>
-    
-    <section class="modal modal-map">
-      <h2 class="visually-hidden">Как до нас добраться</h2>
-      <p>
-        <img src="img/map-big.png" width="940" height="446" alt="Офис компании по адресу ул.Большая Конюшенная 19/8, Санкт-Петербург">
-      </p>
-      <button class="modal-close" type="button">x</button>
-    </section>
   </body>
 </html>

@@ -381,13 +381,22 @@
     </footer>
     
     <section class="modal modal-cart-add">
-      <h2>Товар добавлен в корзину!</h2>
-      <!--  Иконку подключим с стилях    -->
-      <ul class="cart-add-button-list">
-        <li><a class="button" href="#">Оформить заказ</a></li>
-        <li><button class="button modal-close" type="button">Продолжить покупки</button></li>
-      </ul>
-      <button class="modal-close" type="button">x</button>
+      <div class="add-title modal-cart-add-container">
+        <h2>Товар добавлен в корзину!</h2>
+      </div>
+      <div class="add-buttons">
+        <div class="modal-cart-add-container">
+          <ul class="cart-add-button-list">
+            <li>
+              <a class="button finish-button" href="#">Оформить заказ</a>
+            </li>
+            <li>
+              <button class="button continue-button" type="button">Продолжить покупки</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="modal-close visually-hidden" type="button">x</button>
     </section>
   </body>
 </html>
