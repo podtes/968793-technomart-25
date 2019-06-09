@@ -14,6 +14,11 @@ a {
   text-decoration: none;
 }
 
+img { 
+  max-width:100%;
+  height: auto;
+}
+
 .visually-hidden,
 input[type="checkbox"].visually-hidden,
 input[type="checkbox"].visually-hidden {
@@ -65,8 +70,6 @@ input[type="checkbox"].visually-hidden {
   margin-right: 20px;
   box-sizing: border-box;
 }
-
-/* Насколько уместно использовать бр в заголовке?*/
 
 .main-header-menu {
   background-color: #293449;
@@ -121,46 +124,29 @@ input[type="checkbox"].visually-hidden {
   position: relative;
 }
 
-.search-form::before {
-  content: "";
+.icon-search-red {
   position: absolute;
-  
-  background: url("../img/icon-search.svg") no-repeat 0 0;
-  width: 17px;
-  height: 17px;
-  
-  left: 17px;
   top: 12px;
-  
-  opacity: 0.3;
+  left: 17px;
+  fill: #fff;
 }
 
 .search-form:hover {
   background: #212a3a;
 }
 
-
-.search-form:hover::before {
-  opacity: 1;
+.search-form:hover .icon-search-red {
+  opacity: 0.3;
 }
 
-.search-field:focus:before {
-  content: "";
-  position: absolute;
-  
-  background: url("../img/icon-search-red.svg") no-repeat 0 0;
-  width: 17px;
-  height: 17px;
-  
-  left: 487px;
-  top: 12px;
+.search-form:focus .icon-search-red {
+  fill: red;
 }
 
 .search-field {
   background: transparent;
   border: none;
   color: #ffffff;
-  
   width: 270px;
   
   padding: 11px 0 12px 48px;
@@ -405,6 +391,7 @@ input[type="checkbox"].visually-hidden {
   padding-right: 20px;
 
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   box-sizing: border-box;
 }
@@ -705,6 +692,7 @@ input[type="checkbox"].visually-hidden {
   padding-left: 15px;
   
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
 }
@@ -761,8 +749,9 @@ input[type="checkbox"].visually-hidden {
   margin: 0;
   
   display: flex;
+  flex-wrap: wrap;
   
-  width: 130px;
+  width: 135px;
   margin-right: 90px;
 }
 
@@ -972,7 +961,7 @@ input[type="checkbox"].visually-hidden {
   text-transform: uppercase;
   color: #000000;
   
-  margin-right: 25px;
+  margin-right: 26px;
   padding-right: 10px;
   
   position: relative;
@@ -1060,7 +1049,6 @@ input[type="checkbox"].visually-hidden {
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-left: 22px;
 }
 
 .filters-form .manufactures-list li,
@@ -1072,13 +1060,76 @@ input[type="checkbox"].visually-hidden {
   margin-bottom: 22px;
 }
 
-.filters-form label {
+.filters-form .manufactures-list-item {
   font-size: 15px;
   line-height: 20px;
+  
+  position: relative;
+  padding-left: 34px;
+}
+
+.manufactures-list-item input[type="checkbox"] + .checkbox-indicator {
+  position: absolute;
+  background: url(../img/checkbox-off.svg) no-repeat 0 0;
+  
+  width: 23px;
+  height: 23px;
+  
+  left: 0;
+  opacity: 0.2;
+}
+
+.manufactures-list-item input[type="checkbox"]:hover + .checkbox-indicator {
+  opacity: 0.5;
+}
+
+.manufactures-list-item input[type="checkbox"]:checked + .checkbox-indicator {
+  background: url(../img/checkbox-on.svg) no-repeat 0 0;
+  
+  width: 27px;
+  height: 23px;
+  left: 0;
+}
+
+.filters-form .power-list-item {
+  font-size: 15px;
+  line-height: 20px;
+  
+  position: relative;
+  padding-left: 34px;
+}
+
+.power-list-item input[type="radio"] + .radio-indicator {
+  position: absolute;
+  background: url(../img/radio-off.svg) no-repeat 0;
+  
+  width: 25px;
+  height: 25px;
+  
+  left: -1px;
+  top: -1px;
+  opacity: 0.2;
+}
+
+.power-list-item input[type="radio"]:hover + .radio-indicator {
+  opacity: 0.5;
+}
+
+.power-list-item input[type="radio"]:checked + .radio-indicator {
+  background: url(../img/radio-on.svg) no-repeat 0 0;
+  
+  width: 25px;
+  height: 25px;
+  
+  left: -1px;
+  top: -1px;
 }
 
 
-.filters-form input:disabled {
+
+
+
+.filters-form input:disabled  {
   opacity: 0.3;
 }
 
@@ -1324,7 +1375,7 @@ input[type="checkbox"].visually-hidden {
 
 
 .modal-position {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1340,15 +1391,18 @@ input[type="checkbox"].visually-hidden {
   
   z-index: 100;
   
-  display: none;
+/*  display: none;*/
 }
 
 .modal-contact {
   position: relative;
   font-size: 18px;
   
+  padding-top: 56px;
+  
+  
+  
   width: 620px;
-  padding-top: 47px;
 
   background-color: #ffffff;
   color: #000000;
@@ -1356,7 +1410,7 @@ input[type="checkbox"].visually-hidden {
   border-top: 7px solid #ff5357;
   box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.75);
   
-  z-index: 100;
+/*  display: none;*/
 }
 
 .modal-contact-container {
@@ -1369,7 +1423,10 @@ input[type="checkbox"].visually-hidden {
   padding: 0;
   margin: 0;
   border: none;
-  line-height: 17px;
+  line-height: 0;
+}
+
+.contact-form label {
 }
 
 
@@ -1379,31 +1436,25 @@ input[type="checkbox"].visually-hidden {
   
   justify-content: space-between;
   width: 460px;
-  
-  padding-bottom: 32px;
+  margin-bottom: 7px;
 }
 
 .contact-form input {
-  margin-top: 9px;
-  padding-top: 6px;
-  padding-bottom: 9px;
-  padding-left: 13px;
-  
-  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 5px 0 7px 13px;
 }
 
 .contact-form textarea {
-  margin-top: 9px;
-  padding-top: 10px;
-  padding-left: 13px;
-  
-  box-sizing: border-box;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 9px 0 0 13px;
 }
 
 .contact-form-name .contact-form-name-field, 
 .contact-form-email .contact-form-email-field,
 .contact-form-message .contact-form-message-field {
-  border: 2px solid #a9a9a9;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   box-sizing: border-box;
   width: 100%;
@@ -1429,7 +1480,8 @@ input[type="checkbox"].visually-hidden {
 }
 
 .contact-form .contact-form-message {
- flex-grow: 1;
+  flex-grow: 1;
+  margin-top: 10px;
 }
 
 .contact-form-message .contact-form-message-field {
@@ -1439,17 +1491,18 @@ input[type="checkbox"].visually-hidden {
 .contact-form-button-container {
   background-color: #f4f4f4;
   width: 100%;
-  
-  padding: 35px 0;
+  padding: 37px 0;
   margin: 0 auto;
 }
 
 .contact-form .button {
   width: 100%;
-  padding: 11px 0;
   text-transform: uppercase;
   font-size: 14px;
   color: #ffffff;
+  
+  padding: 10px 0;
+  padding-top: 11px;
   
   background-color: #ee3643;
   border-radius: 5px;
@@ -1470,7 +1523,8 @@ input[type="checkbox"].visually-hidden {
   height: 446px;
 
   box-shadow: 0px 0px 14.72px 1.28px rgba(47, 42, 43, 0.5); 
-  z-index: 99;
+  
+  display: none;
 }
 
 
@@ -1504,6 +1558,7 @@ input[type="checkbox"].visually-hidden {
 
 .modal-cart-add .add-title {
   padding: 80px 0;
+  padding-bottom: 83px;
 }
 
 .modal-cart-add h2 {
@@ -1537,8 +1592,7 @@ input[type="checkbox"].visually-hidden {
 .add-buttons .cart-add-button-list {
   list-style: none;
   padding: 0;
-  padding-bottom: 38px;
-  padding-top: 40px;
+  padding-top: 38px;
   margin: 0;
   
   width: 460px;
@@ -1556,6 +1610,7 @@ input[type="checkbox"].visually-hidden {
   margin-right: auto;
   padding: 11px 0;
   padding-right: 3px;
+  margin-bottom: 35px;
   
   background-color: #ee3643;
   border-radius: 2px;
@@ -1592,6 +1647,7 @@ input[type="checkbox"].visually-hidden {
   position: absolute;
   
   font-size: 0;
+  border: none;
   
   width: 23px;
   height: 23px;
