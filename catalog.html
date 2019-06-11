@@ -396,5 +396,34 @@
         <button class="modal-close" type="button">x</button>
       </section>
     </div>
+    
+    <script>
+    
+      var buyButton = document.querySelector(".buy");
+      var buyForm = document.querySelector(".modal-cart-add");
+      var overlay = document.querySelector(".modal-position");
+      var closeBuyFormButton = buyForm.querySelector(".modal-close");
+      var continueBuyFormButton = buyForm.querySelector(".continue-button");
+      
+      buyButton.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        buyForm.classList.add("modal-show");
+        overlay.classList.add("modal-position-show");
+    });
+      
+      closeBuyFormButton.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        buyForm.classList.remove("modal-show");
+        overlay.classList.remove("modal-position-show");
+      })
+      
+      continueBuyFormButton.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        buyForm.classList.remove("modal-show");
+        overlay.classList.remove("modal-position-show");
+      })
+    
+    </script>
+    
   </body>
 </html>

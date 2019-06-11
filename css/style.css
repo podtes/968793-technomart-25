@@ -521,7 +521,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .contacts {
-  
+  position: relative;
   width: 300px;
 }
 
@@ -545,6 +545,17 @@ input[type="checkbox"].visually-hidden {
   margin-bottom: 31px;
   padding: 0;
 }
+
+/*
+.iframe-map-small {
+  position: absolute;
+  width: 300;
+  height: 158;
+  
+  top: 135px;
+  left: 0;
+}
+*/
 
 .contacts img {
   margin-bottom: 37px;
@@ -1371,9 +1382,6 @@ input[type="checkbox"].visually-hidden {
 
 
 
-
-
-
 .modal-position {
   position: fixed;
   top: 0;
@@ -1388,10 +1396,9 @@ input[type="checkbox"].visually-hidden {
   
   width: 100%;
   height: 100%;
-  
   z-index: 100;
   
-/*  display: none;*/
+  display: none;
 }
 
 .modal-contact {
@@ -1399,9 +1406,7 @@ input[type="checkbox"].visually-hidden {
   font-size: 18px;
   
   padding-top: 56px;
-  
-  
-  
+
   width: 620px;
 
   background-color: #ffffff;
@@ -1410,7 +1415,11 @@ input[type="checkbox"].visually-hidden {
   border-top: 7px solid #ff5357;
   box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.75);
   
-/*  display: none;*/
+  animation-name: modal-contacts-open;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
 }
 
 .modal-contact-container {
@@ -1523,8 +1532,10 @@ input[type="checkbox"].visually-hidden {
   height: 446px;
 
   box-shadow: 0px 0px 14.72px 1.28px rgba(47, 42, 43, 0.5); 
-  
-  display: none;
+  animation-name: modal-map-open;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 
@@ -1549,6 +1560,7 @@ input[type="checkbox"].visually-hidden {
   box-shadow: 10px 17px 40px 0px rgba(0, 0, 0, 0.75);
   
   z-index: 100;
+  display: block;
 }
 
 .modal-cart-add-container {
@@ -1654,4 +1666,35 @@ input[type="checkbox"].visually-hidden {
   
   right: 8px;
   top: 8px;
+}
+
+
+.modal {
+  display: none;
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-position-show {
+  display: flex;
+}
+
+
+
+/* АНИМАЦИЯ МОДАЛОК*/
+
+@keyframes modal-contacts-open {
+  0% {transform: translateX(1000px)}
+  30% {transform: translateX(0)}
+  45% {transform: translateX(15px)}
+  60% {transform: translateX(0)}
+  80% {transform: translateX(3px)}
+  100% {transform: translateX(0)}
+}
+
+@keyframes modal-map-open {
+  0% {transform: scale(0)}
+  100% {transform: scale(1)}
 }
