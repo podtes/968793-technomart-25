@@ -1598,6 +1598,7 @@ input[type="checkbox"].visually-hidden {
   
   font-size: 13px;
   line-height: 18px;
+  font-weight: normal;
   font-family: PT Sans, Arial, sans-serif;
   text-transform: uppercase;
   background-color: #f7f3ec;
@@ -1634,7 +1635,7 @@ input[type="checkbox"].visually-hidden {
   margin: 0;
   padding: 0;
   display: inline-block;
-  vertical-align: middle;f
+  vertical-align: middle;
   font-size: 0;
   position: relative;
   
