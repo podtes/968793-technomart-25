@@ -42,8 +42,20 @@ input[type="checkbox"].visually-hidden {
   box-sizing: border-box;
 }
 
+.button {
+  background-color: #ee3643;
+}
+
+.button:hover {
+  background-color: #ca2c37;
+}
+
+.button:active {
+  background-color: #ba2732;
+}
+
 .main-header {
-  background: #f3f7f9;
+  background-color: #f3f7f9;
   padding: 0;
   margin: 0;
   padding-bottom: 60px;
@@ -80,7 +92,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .main-header-logo {
-  background: #ee3643;
+  background-color: #ee3643;
   
   width: 220px;
   height: 42px;
@@ -89,7 +101,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .main-header-logo:hover {
-  background: #ca2c37;
+  background-color: #ca2c37;
 }
 
 .main-header-logo:active {
@@ -134,7 +146,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-form:hover {
-  background: #212a3a;
+  background-color: #212a3a;
 }
 
 .search-field:hover + .icon-search-red {
@@ -147,7 +159,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-field {
-  background: transparent;
+  background-color: transparent;
   border: none;
   color: #ffffff;
   width: 270px;
@@ -157,7 +169,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-field:focus {
-  background: #ffffff;
+  background-color: #ffffff;
   color: #000000;
 }
 
@@ -243,27 +255,27 @@ input[type="checkbox"].visually-hidden {
 
 .user-menu-bookmarks:hover,
 .user-menu-basket:hover {
-  background: #212a3a;
+  background-color: #212a3a;
 }
 
 .user-menu-bookmarks:active,
 .user-menu-basket:active {
-  background: #161d29;
+  background-color: #161d29;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .user-menu .user-menu-order {
   padding-left: 20px;
   padding-right: 22px;
-  background: #63a63e;
+  background-color: #63a63e;
 }
 
 .user-menu-order:hover {
-  background: #5fbb2d;
+  background-color: #5fbb2d;
 }
 
 .user-menu-order:active {
-  background: #518534;
+  background-color: #518534;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -327,13 +339,14 @@ input[type="checkbox"].visually-hidden {
 
 .main-header-user-navigation li {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header-user-navigation a {
   font-size: 21px;
   line-height: 21px;
   color: #000000;
-  background: #ffffff;
+  background-color: #ffffff;
   
   display: block;
   text-align: center;
@@ -410,12 +423,12 @@ input[type="checkbox"].visually-hidden {
 }
 
 .main-header-site-navigation a:hover {
-  background: #293449;
+  background-color: #293449;
 }
 
 .main-header-site-navigation a:active {
   color: rgba(255, 255, 255, 0.5);
-  background: #1d2739;
+  background-color: #1d2739;
   box-shadow: 0 5px 0 0 #1d2739;
 }
 
@@ -476,6 +489,7 @@ input[type="checkbox"].visually-hidden {
 
 .advantages-item a {
   display: inline-block;
+  vertical-align: middle;
   width: 135px;
   padding: 10px;
   margin-left: 2px;
@@ -505,7 +519,7 @@ input[type="checkbox"].visually-hidden {
   background-color: #ffbf47;
 }
 
-.advantages-item-materials a::after {
+.advantages-item-materials::after {
   content: "";
   position: absolute;
   background-image: url("../img/advantages-item-materials.png");
@@ -520,7 +534,7 @@ input[type="checkbox"].visually-hidden {
   background-color: #3bbce3;
 }
 
-.advantages-item-instrument a::after {
+.advantages-item-instrument::after {
   content: "";
   position: absolute;
   background-image: url("../img/advantages-item-instrument.png");
@@ -532,10 +546,11 @@ input[type="checkbox"].visually-hidden {
 }
 
 .advantages-item-machines {
+  position: relative;
   background-color: #dc91d8;
 }
 
-.advantages-item-machines a::after {
+.advantages-item-machines::after {
   content: "";
   position: absolute;
   background-image: url("../img/advantages-item-machines.png");
@@ -550,7 +565,7 @@ input[type="checkbox"].visually-hidden {
   background-color: #8ed78f;
 }
 
-.advantages-item-discount a::after {
+.advantages-item-discount::after {
   content: "";
   position: absolute;
   background-image: url("../img/advantages-item-discount.png");
@@ -566,7 +581,7 @@ input[type="checkbox"].visually-hidden {
   background-color: #ffc047;
 }
 
-.advantages-item-delivery a::after {
+.advantages-item-delivery::after {
   content: "";
   position: absolute;
   background-image: url("../img/advantages-item-delivery.png");
@@ -700,6 +715,7 @@ input[type="checkbox"].visually-hidden {
 
 
 .advantages-slider-item-perforators {
+  background-color: #d4c5b3;
   background: url(../img/advantages-slider-1.jpg) no-repeat 0 0;
   
   width: 620px;
@@ -708,6 +724,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .advantages-slider-item-drills {
+  background-color: #7a6057;
   background: url(../img/advantages-slider-2.jpg) no-repeat 0 0;
   
   width: 620px;
@@ -755,8 +772,6 @@ input[type="checkbox"].visually-hidden {
   font-weight: normal;
   color: #ffffff;
   
-  background-color: #ee3643;
-  
   padding: 0;
   padding: 10px 56px;
   margin: 0;
@@ -793,8 +808,6 @@ input[type="checkbox"].visually-hidden {
   text-transform: uppercase;
   font-weight: normal;
   color: #ffffff;
-  
-  background-color: #ee3643;
   
   padding: 0;
   padding: 10px 70px;
@@ -1046,9 +1059,6 @@ input[type="checkbox"].visually-hidden {
   padding: 0;
   
   padding-left: 36px;
-  
-  background: #ffffff;
-  color: #000000;
 }
 
 .transport-company-list li:not(:last-child) {
@@ -1125,17 +1135,6 @@ input[type="checkbox"].visually-hidden {
   padding: 0;
 }
 
-/*
-.iframe-map-small {
-  position: absolute;
-  width: 300;
-  height: 158;
-  
-  top: 135px;
-  left: 0;
-}
-*/
-
 .contacts img {
   margin-bottom: 37px;
 }
@@ -1177,7 +1176,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .main-footer-logo:hover {
-  background: #ca2c37;
+  background-color: #ca2c37;
 }
 
 .main-footer-logo:active {
@@ -1306,7 +1305,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .bottom-footer {
-  background: #293449;
+  background-color: #293449;
   color: #ffffff;
   padding-top: 37px;
   padding-bottom: 30px;
@@ -1389,11 +1388,6 @@ input[type="checkbox"].visually-hidden {
 .bottom-footer-copyright-mail {
   width: 98px;
 }
-
-.bottom-footer-copyright-html {
-  
-}
-
 
 .bottom-footer-callback a,
 .bottom-footer-copyright-html a {
@@ -1499,6 +1493,7 @@ input[type="checkbox"].visually-hidden {
 
 .main-header-user-navigation-catalog li:not(.logout-button) {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header-user-navigation-catalog li:nth-child(2) {
@@ -1626,8 +1621,6 @@ input[type="checkbox"].visually-hidden {
 }
 
 .price-indicators-input {
-/*  padding: 27px 10px;*/
-  
   padding-top: 24px;
   padding-bottom: 30px;
   padding-left: 20px;
@@ -1641,6 +1634,7 @@ input[type="checkbox"].visually-hidden {
   margin: 0;
   padding: 0;
   display: inline-block;
+  vertical-align: middle;f
   font-size: 0;
   position: relative;
   
@@ -1786,7 +1780,7 @@ input[type="checkbox"].visually-hidden {
   padding-left: 34px;
 }
 
-.manufactures-list-item input[type="checkbox"] + .checkbox-indicator {
+input[type="checkbox"] + .checkbox-indicator {
   position: absolute;
   background: url(../img/checkbox-off.svg) no-repeat 0 0;
   
@@ -1798,11 +1792,15 @@ input[type="checkbox"].visually-hidden {
   opacity: 0.2;
 }
 
-.manufactures-list-item input[type="checkbox"]:hover + .checkbox-indicator {
+input[type="checkbox"]:hover + .checkbox-indicator {
   opacity: 0.5;
 }
 
-.manufactures-list-item input[type="checkbox"]:checked + .checkbox-indicator {
+input[type="checkbox"]:focus + .checkbox-indicator {
+  outline: auto;
+}
+
+input[type="checkbox"]:checked + .checkbox-indicator {
   background: url(../img/checkbox-on.svg) no-repeat 0 0;
   
   width: 27px;
@@ -1818,7 +1816,7 @@ input[type="checkbox"].visually-hidden {
   padding-left: 34px;
 }
 
-.power-list-item input[type="radio"] + .radio-indicator {
+input[type="radio"] + .radio-indicator {
   position: absolute;
   background: url(../img/radio-off.svg) no-repeat 0;
   
@@ -1830,11 +1828,16 @@ input[type="checkbox"].visually-hidden {
   opacity: 0.2;
 }
 
-.power-list-item input[type="radio"]:hover + .radio-indicator {
+input[type="radio"]:hover + .radio-indicator {
   opacity: 0.5;
 }
 
-.power-list-item input[type="radio"]:checked + .radio-indicator {
+input[type="radio"]:focus + .radio-indicator {
+  outline: auto;
+}
+
+
+input[type="radio"]:checked + .radio-indicator {
   background: url(../img/radio-on.svg) no-repeat 0 0;
   
   width: 25px;
@@ -2041,6 +2044,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .flag-new {
+  background-color: #ee3643;
   background: url(../img/new-flag.png) no-repeat 0 0;
 }
 
@@ -2088,11 +2092,11 @@ input[type="checkbox"].visually-hidden {
 }
 
 .actions .buy:hover {
-  background: #5fbb2d;
+  background-color: #5fbb2d;
 }
 
 .actions .buy:active {
-  background: #518534;
+  background-color: #518534;
   box-shadow: none;
 }
 
@@ -2119,7 +2123,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .actions .bookmark {
-  background: #ffffff;
+  background-color: #ffffff;
   color: #000000;
   
   padding: 16px 0;
@@ -2418,11 +2422,11 @@ input[type="checkbox"].visually-hidden {
 }
 
 .contact-form .button:hover {
-  background: #ca2c37;
+  background-color: #ca2c37;
 }
 
 .contact-form .button:active {
-  background: #ba2732;
+  background-color: #ba2732;
 }
 
 .modal-map {
@@ -2573,6 +2577,11 @@ input[type="checkbox"].visually-hidden {
   top: 8px;
 }
 
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+
 
 .modal {
   display: none;
@@ -2588,7 +2597,7 @@ input[type="checkbox"].visually-hidden {
 
 .modal-contacts-wrong {
   animation-name: modal-contactss-wrong ;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-timing-function: ease;
 }
 

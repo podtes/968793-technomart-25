@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&display=swap&subset=cyrillic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap&subset=cyrillic">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-mini.css">
     <title>HTML Academy: Техномарт</title>
   </head>
   <body>
@@ -148,7 +148,7 @@
                   </li>
                 </ul>
               </fieldset>
-              <input class="button filters-button" type="submit" value="Показать"> 
+              <input class="filters-button" type="submit" value="Показать"> 
             </form>
           </section>
           <section class="results">
@@ -355,7 +355,7 @@
     <footer class="main-footer">
       <div class="footer-index container">
         <section class="main-footer-site-navigation">
-          <a class="main-footer-logo">
+          <a class="main-footer-logo" href="index.html">
             <img src="img/index-logo-footer.png" alt="Техномарт" width="139" height="23">
           </a>
           <h2 class="visually-hidden">Навигация по сайту</h2>
@@ -411,7 +411,7 @@
           </p>
           <p class="bottom-footer-copyright-html">
             <b>Разработано —</b><br>
-            <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+            <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
           </p>
         </div>
       </section>
@@ -429,7 +429,7 @@
                 <a class="button finish-button" href="#">Оформить заказ</a>
               </li>
               <li>
-                <button class="button continue-button" type="button">Продолжить покупки</button>
+                <button class="continue-button" type="button">Продолжить покупки</button>
               </li>
             </ul>
           </div>
@@ -437,36 +437,6 @@
         <button class="modal-close" type="button">x</button>
       </section>
     </div>
-    
-    <script>
-    
-      var buyButtons = document.querySelectorAll(".buy");
-      var buyForm = document.querySelector(".modal-cart-add");
-      var overlay = document.querySelector(".modal-position");
-      var closeBuyFormButton = buyForm.querySelector(".modal-close");
-      var continueBuyFormButton = buyForm.querySelector(".continue-button");
-      
-      for (var i = 0; i < buyButtons.length; i++) {
-        buyButtons[i].addEventListener("click", function (evt) {
-          evt.preventDefault();
-          buyForm.classList.add("modal-show");
-          overlay.classList.add("modal-position-show");
-    });
-  }
-      
-      closeBuyFormButton.addEventListener("click", function(evt) {
-        evt.preventDefault();
-        buyForm.classList.remove("modal-show");
-        overlay.classList.remove("modal-position-show");
-      });
-      
-      continueBuyFormButton.addEventListener("click", function(evt) {
-        evt.preventDefault();
-        buyForm.classList.remove("modal-show");
-        overlay.classList.remove("modal-position-show");
-      });
-    
-    </script>
-    
+    <script src="js/scripts-catalog.js"></script>
   </body>
 </html>
